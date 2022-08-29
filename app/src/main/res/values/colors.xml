@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@android:color/transparent</color>
+    <color name="colorPrimaryDark">#9F474747</color>
+    <color name="colorAccent">#128C7E</color>
+    <color name="inactiveAddButtonColor">#B3B3B3</color>
+    <color name="infoPageBackgroundColor">#EBEBEB</color>
+    <color name="actionBarArrowColor">@color/colorAccent</color>
+    <color name="white">#FFFFFF</color>
+    <color name="blue">#673AB7</color>
+
+    <color name="text_color">#ff666666</color>
+    <color name="color_ads">#FF7325</color>
+    <color name="color_white">#ffffffff</color>
+    <color name="color_gray_2_ads">#fff8f8f8</color>
+    <color name="stocke_card">#5E58595A</color>
+
+    <color name="light_transparent">#16000000</color>
+    <color name="color_white_60">#99FFFFFF</color>
+    <color name="color_042834">#042834</color>
+    <color name="color_black_30">#4D000000</color>
+    <color name="text_color_2">#FF7325</color>
+</resources>

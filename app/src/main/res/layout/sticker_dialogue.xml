@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:id="@+id/LinearLayout"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/native_ad_container_dialog"
+                android:layout_width="match_parent"
+                android:weightSum="2"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_Wait"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="50dp"
+                            android:layout_marginRight="50dp"
+                            android:gravity="center"
+                            android:text="1. whatsapp till dont support animated stickers \n 2.so download GB whatsapp for animated stickers \n 3. or use method 2: 'ADD TO STICKER KEYBOARD' FOR ALL whatsapps"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/url_gb"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/yes_button"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        style="@style/StickerPreviewButtonText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/no_button"
+                        android:clickable="false"
+                        android:textColor="#FFFFFF"
+                        android:drawableStart="@drawable/sticker_3rdparty_wa"
+                        android:drawableLeft="@drawable/sticker_3rdparty_wa"
+                        android:drawablePadding="8dp"
+                        android:focusable="false"
+                        android:foreground="@android:color/transparent"
+                        android:text="Click here to download GB Whatsapp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp"
+                android:layout_below="@+id/LinearLayout"
+                android:id="@+id/buttons"
+                android:weightSum="1"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_centerInParent="true">
+
+
+                <LinearLayout
+                    android:padding="10dp"
+                    android:id="@+id/no"
+                    android:background="@drawable/no_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        style="@style/StickerPreviewButtonText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/no_button"
+                        android:clickable="false"
+                        android:textColor="#FFFFFF"
+                        android:drawableStart="@drawable/sticker_3rdparty_wa"
+                        android:drawableLeft="@drawable/sticker_3rdparty_wa"
+                        android:drawablePadding="8dp"
+                        android:focusable="false"
+                        android:foreground="@android:color/transparent"
+                        android:text="ok i UNDERSTAND continue to app " />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmer_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_below="@id/buttons"
+                android:background="@drawable/bg_card_ads"
+                android:visibility="gone"
+                app:shimmer_auto_start="true"
+                app:shimmer_base_color="#ccc">
+
+                <include layout="@layout/load_native" />
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
+            <FrameLayout
+                android:id="@+id/native_frame"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/buttons"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

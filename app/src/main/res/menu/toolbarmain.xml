@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_share"
+        android:title="Share This App"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_pp"
+        android:title="Privacy Policy"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_how"
+        android:title="How to use"
+        app:showAsAction="never" />
+</menu>

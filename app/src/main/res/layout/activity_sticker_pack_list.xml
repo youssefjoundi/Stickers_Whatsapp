@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/drawerlayout"
+    android:layout_height="match_parent"
+    android:background="#FFF"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.StickerPackListActivity"
+    tools:showIn="@layout/activity_sticker_pack_list">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:layout_width="match_parent"
+            android:layout_above="@+id/banner_container"
+            android:layout_height="match_parent"
+            android:id="@+id/draw">
+
+
+            <TextView
+                android:id="@+id/error_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:textColor="@android:color/holo_red_dark"
+                tools:text="@string/error_message" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/sticker_pack_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/AppTheme.AppBarOverlay">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="#FFFFFF"
+                        app:titleTextColor="@color/blue"
+                        app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+                </com.google.android.material.appbar.AppBarLayout>
+            </RelativeLayout>
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:layout_gravity="start"
+                app:itemTextColor="#202020"
+                app:itemIconTint="@color/blue"
+                android:fitsSystemWindows="true"
+                app:headerLayout="@layout/nav_header_main"
+                app:menu="@menu/activity_main_drawer" />
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+        <FrameLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp">
+            <com.solodroid.ads.sdk.ui.BannerAdView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"/>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+</FrameLayout>

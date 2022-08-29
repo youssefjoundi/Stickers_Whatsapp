@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "122344101798",
+    "project_id": "codecaynon-apps",
+    "storage_bucket": "codecaynon-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122344101798:android:e2230c52989093f0716167",
+        "android_client_info": {
+          "package_name": "ok.kuzgun.sabahchinoiz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122344101798-284vq5iicmo1eignt91abc540rkrd906.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj7n74FosWLbhOgFc6qRCzoVRzguICP2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122344101798-284vq5iicmo1eignt91abc540rkrd906.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:122344101798:android:73216969536fd92f716167",
+        "android_client_info": {
+          "package_name": "example.animated.stickers.id"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "122344101798-284vq5iicmo1eignt91abc540rkrd906.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj7n74FosWLbhOgFc6qRCzoVRzguICP2g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "122344101798-284vq5iicmo1eignt91abc540rkrd906.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
