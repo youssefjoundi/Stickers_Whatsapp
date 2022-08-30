@@ -1,62 +1,33 @@
 {
   "project_info": {
-    "project_number": "122344101798",
-    "project_id": "codecaynon-apps",
-    "storage_bucket": "codecaynon-apps.appspot.com"
+    "project_number": "489030519152",
+    "project_id": "joundidev-78ac4",
+    "storage_bucket": "joundidev-78ac4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:122344101798:android:e2230c52989093f0716167",
+        "mobilesdk_app_id": "1:489030519152:android:34d360338fc87224c8e7b5",
         "android_client_info": {
-          "package_name": "ok.kuzgun.sabahchinoiz"
+          "package_name": "com.Flowers.animatedstickers"
         }
       },
       "oauth_client": [
         {
-          "client_id": "122344101798-284vq5iicmo1eignt91abc540rkrd906.apps.googleusercontent.com",
+          "client_id": "489030519152-5emg2j0k66cn48p4dgkn9nqorha82gcp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDj7n74FosWLbhOgFc6qRCzoVRzguICP2g"
+          "current_key": "AIzaSyDpU0NV-u3K-kPYnW-sAhVzO7faYBpf3Dc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "122344101798-284vq5iicmo1eignt91abc540rkrd906.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:122344101798:android:73216969536fd92f716167",
-        "android_client_info": {
-          "package_name": "example.animated.stickers.id"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "122344101798-284vq5iicmo1eignt91abc540rkrd906.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDj7n74FosWLbhOgFc6qRCzoVRzguICP2g"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "122344101798-284vq5iicmo1eignt91abc540rkrd906.apps.googleusercontent.com",
+              "client_id": "489030519152-5emg2j0k66cn48p4dgkn9nqorha82gcp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
