@@ -124,7 +124,6 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
         super.onResume();
         whiteListCheckAsyncTask = new WhiteListCheckAsyncTask(this);
         whiteListCheckAsyncTask.execute(stickerPackList.toArray(new StickerPack[0]));
-        Toast.makeText(this, "counter " + Constants.counter, Toast.LENGTH_SHORT).show();
         if (Constants.counter >= Constants.adsInterval){
             AdsManager.getInstance().loadIronSourceInterstitial(this);
             Constants.counter = 0;
