@@ -121,7 +121,7 @@ public class MyFirebaseMessageService extends FirebaseMessagingService {
 
     private int getNotificationIcon(NotificationCompat.Builder notificationBuilder) {
         notificationBuilder.setColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary));
-        return R.drawable.ads_icon;
+        return R.drawable.ic_notification;
     }
 
     private Bitmap fetchBitmap(String src) {
