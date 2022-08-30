@@ -18,7 +18,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.onesignal.OneSignal;
 
 public class StickerApplication extends Application {
-    private static final String ONESIGNAL_APP_ID = "b0d04b5c-2088-4ab3-8ef2-9ecd8b149432";
+    private static final String ONESIGNAL_APP_ID = "63aec28b-dacc-4a55-81cd-022b15a81f7f";
 
     @Override
     public void onCreate() {
