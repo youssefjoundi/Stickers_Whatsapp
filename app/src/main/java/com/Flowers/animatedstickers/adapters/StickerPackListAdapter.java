@@ -144,7 +144,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             itemPackBinding.stickerPacksListItemImageList.removeAllViews();
             //if this sticker pack contains less stickers than the max, then take the smaller size.
             int actualNumberOfStickersToShow = Math.min(maxNumberOfStickersInARow, pack.getStickers().size());
-            for (int i = 0; i < actualNumberOfStickersToShow; i++) {
+            for (int i = 0; i < actualNumberOfStickersToShow - 1; i++) {
                 final SimpleDraweeView rowImage = (SimpleDraweeView) LayoutInflater.from(context).inflate(R.layout.sticker_packs_list_image_item, itemPackBinding.stickerPacksListItemImageList, false);
 
                 RequestOptions requestOptions = new RequestOptions();
@@ -158,7 +158,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                 final LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) rowImage.getLayoutParams();
                 final int marginBetweenImages = minMarginBetweenImages - lp.leftMargin - lp.rightMargin;
                 if (i != actualNumberOfStickersToShow - 1 && marginBetweenImages > 0) { //do not set the margin for the last image
-                    lp.setMargins(lp.leftMargin, lp.topMargin, lp.rightMargin + marginBetweenImages, lp.bottomMargin);
+                    lp.setMargins(lp.leftMargin + 20, lp.topMargin, lp.rightMargin + marginBetweenImages, lp.bottomMargin);
                     rowImage.setLayoutParams(lp);
                 }
                 itemPackBinding.stickerPacksListItemImageList.addView(rowImage);
