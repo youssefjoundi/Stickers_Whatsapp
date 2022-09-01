@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "489030519152",
-    "project_id": "joundidev-78ac4",
-    "storage_bucket": "joundidev-78ac4.appspot.com"
+    "project_number": "821384691750",
+    "project_id": "stickers-whatsapp-bdf0a",
+    "storage_bucket": "stickers-whatsapp-bdf0a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:489030519152:android:34d360338fc87224c8e7b5",
+        "mobilesdk_app_id": "1:821384691750:android:9b4e6bcfb91082aee566e7",
         "android_client_info": {
           "package_name": "com.Flowers.animatedstickers"
         }
       },
       "oauth_client": [
         {
-          "client_id": "489030519152-5emg2j0k66cn48p4dgkn9nqorha82gcp.apps.googleusercontent.com",
+          "client_id": "821384691750-o3d10ksu834ktt3isonpl1m184r8ba0b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDpU0NV-u3K-kPYnW-sAhVzO7faYBpf3Dc"
+          "current_key": "AIzaSyAM5Zpf47DhREkgLbOHPtlN1nWPzQ8204k"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "489030519152-5emg2j0k66cn48p4dgkn9nqorha82gcp.apps.googleusercontent.com",
+              "client_id": "821384691750-o3d10ksu834ktt3isonpl1m184r8ba0b.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

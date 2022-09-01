@@ -14,12 +14,13 @@ import android.app.Application;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.onesignal.OneSignal;
 
 public class StickerApplication extends Application {
-    private static final String ONESIGNAL_APP_ID = "63aec28b-dacc-4a55-81cd-022b15a81f7f";
-
+    private static final String ONESIGNAL_APP_ID = "cb58ecd2-9d63-4851-9fc6-7f2d3f2d6010";
+    private FirebaseAnalytics mFirebaseAnalytics;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -35,12 +36,12 @@ public class StickerApplication extends Application {
         OneSignal.initWithContext(this);
         OneSignal.setAppId(ONESIGNAL_APP_ID);
 
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
         // promptForPushNotifications will show the native Android notification permission prompt.
         // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 7)
 
         FirebaseMessaging.getInstance().subscribeToTopic("sticker_notification");
-
-
+        FirebaseMessaging.getInstance().setAutoInitEnabled(true);
     }
 
 

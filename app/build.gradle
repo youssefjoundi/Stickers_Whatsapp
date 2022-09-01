@@ -122,8 +122,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.1.0'
 
     implementation platform('com.google.firebase:firebase-bom:30.3.2')
+    implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-analytics'
-
+    implementation 'com.google.firebase:firebase-inappmessaging-display'
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test:runner:1.2.0'
@@ -142,6 +143,7 @@ dependencies {
     implementation 'com.onesignal:OneSignal:4.7.0'
 
 
+
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation "com.zlc.glide:webpdecoder:2.0.4.11.0"
@@ -154,7 +156,6 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.3'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
-
 
     implementation 'com.android.volley:volley:1.2.1'
 
