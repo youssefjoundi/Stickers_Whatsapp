@@ -44,6 +44,7 @@ public class MyFirebaseMessageService extends FirebaseMessagingService {
             Map<String, String> data = remoteMessage.getData();
             Log.d("onMessageFirebase: ", remoteMessage.getData().toString());
 
+
             if (data.get("post_id") != null) {
                 String _unique_id = data.get("unique_id");
                 String title = data.get("title");
