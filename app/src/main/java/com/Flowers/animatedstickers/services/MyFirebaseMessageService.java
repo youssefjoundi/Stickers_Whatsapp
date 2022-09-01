@@ -66,7 +66,6 @@ public class MyFirebaseMessageService extends FirebaseMessagingService {
         Intent notificationIntent = new Intent(Intent.ACTION_VIEW);
         notificationIntent.setData(Uri.parse(link));
 
-
         notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
