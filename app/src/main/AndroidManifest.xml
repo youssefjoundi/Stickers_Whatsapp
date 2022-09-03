@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.Flowers.animatedstickers">
+    package="com.stickerly_wasticker.deamor_lovestickers">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -10,7 +10,7 @@
         tools:node="remove" />
 
     <application
-        android:name=".application.StickerApplication"
+        android:name="com.stickerly_wasticker.deamor_lovestickers.application.StickerApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:hardwareAccelerated="true"
@@ -22,13 +22,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activities.exit_activity"
+            android:name="com.stickerly_wasticker.deamor_lovestickers.activities.exit_activity"
             android:exported="false"
             android:noHistory = "false"
             android:theme="@style/MyAlertDialogTheme"/>
 
         <activity
-            android:name=".activities.EntryActivity"
+            android:name="com.stickerly_wasticker.deamor_lovestickers.activities.EntryActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,27 +38,27 @@
         </activity>
 
 
-        <activity android:name=".activities.StickerPackListActivity" />
+        <activity android:name="com.stickerly_wasticker.deamor_lovestickers.activities.StickerPackListActivity" />
         <activity
-            android:name=".activities.StickerPackDetailsActivity"
-            android:parentActivityName=".activities.StickerPackListActivity"
+            android:name="com.stickerly_wasticker.deamor_lovestickers.activities.StickerPackDetailsActivity"
+            android:parentActivityName="com.stickerly_wasticker.deamor_lovestickers.activities.StickerPackListActivity"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.Flowers.animatedstickers.activities.StickerPackListActivity" />
+                android:value="com.stickerly_wasticker.deamor_lovestickers.activities.StickerPackListActivity" />
         </activity>
         <activity
-            android:name=".activities.StickerPackInfoActivity"
+            android:name="com.stickerly_wasticker.deamor_lovestickers.activities.StickerPackInfoActivity"
             android:label="@string/title_activity_sticker_pack_info"
-            android:parentActivityName=".activities.StickerPackDetailsActivity"
+            android:parentActivityName="com.stickerly_wasticker.deamor_lovestickers.activities.StickerPackDetailsActivity"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.Flowers.animatedstickers.activities.StickerPackDetailsActivity" />
+                android:value="com.stickerly_wasticker.deamor_lovestickers.activities.StickerPackDetailsActivity" />
         </activity>
 
         <service
-            android:name="com.Flowers.animatedstickers.services.MyFirebaseMessageService"
+            android:name="com.stickerly_wasticker.deamor_lovestickers.services.MyFirebaseMessageService"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
@@ -77,7 +77,7 @@
 
 
         <provider
-            android:name=".StickerContentProvider"
+            android:name="com.stickerly_wasticker.deamor_lovestickers.StickerContentProvider"
             android:authorities="${contentProviderAuthority}"
             android:enabled="true"
             android:exported="true"

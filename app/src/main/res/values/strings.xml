@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- This is the app's name, translators please do not translate and put in the same text as English version. Developers can consider putting in their own translation, this string must be changed before publishing -->
-    <string name="app_name" translatable="false">早安晚安贴纸</string>
+    <string name="app_name" translatable="false">Stickers de amor</string>
     <!-- Content description for the sticker pack tray image -->
     <string name="tray_image_content_description">Sticker Pack Tray Image</string>
     <!-- the title of info button in the menu that takes the user to more information about that pack showing publisher website and so on -->
@@ -41,7 +41,6 @@
     <!-- Toast text when we could not take user to play store because they don't have Google Play app installed -->
     <string name="cannot_find_play_store">Google Play is not installed on the device.</string>
     <string name="mime_type" tools:ignore="MissingTranslation">image/webp.wasticker</string>
-    <string name="email_tag" translatable="false">kuzgun2021@gmail.com</string>
 
     <string name="permission_dialogue" translatable="false">Please allow permissions to Animated stickers keyboard</string>
 
@@ -51,10 +50,8 @@
     <string name="ad_attribution" translatable="false">Ad</string>
 
     <!-- url for app to change-->
-    <string name="howtouseurl" translatable="false">https://kuzgun2021.blogspot.com/</string>
-    <string name="privacy_policy_url" translatable="false">https://youtube.com</string>
-    <string name="developer_page_more_apps" translatable="false">https://play.google.com/store/apps/developer?id=Kuzgun+lnc</string>
-    <string name="app_url" translatable="false">https://play.google.com/store/apps/details?id=ok.kuzgun.sabahchinoiz</string>
+    <string name="privacy_policy_url" translatable="false">https://sites.google.com/view/h-storeinc</string>
+    <string name="developer_page_more_apps" translatable="false">https://play.google.com/store/apps/dev?id=6311130581489576632</string>
 
     <!--Iron Source Ads-->
     <string name="iron_source_banner" translatable="false">DefaultBanner</string>
