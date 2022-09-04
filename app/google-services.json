@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "821384691750",
-    "project_id": "stickers-whatsapp-bdf0a",
-    "storage_bucket": "stickers-whatsapp-bdf0a.appspot.com"
+    "project_number": "1054356855372",
+    "project_id": "stickersdeamor-6091a",
+    "storage_bucket": "stickersdeamor-6091a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:821384691750:android:9b4e6bcfb91082aee566e7",
+        "mobilesdk_app_id": "1:1054356855372:android:ce86c50c33ed1a5f21f2e9",
         "android_client_info": {
           "package_name": "com.stickerly_wasticker.deamor_lovestickers"
         }
       },
       "oauth_client": [
         {
-          "client_id": "821384691750-o3d10ksu834ktt3isonpl1m184r8ba0b.apps.googleusercontent.com",
+          "client_id": "1054356855372-ami3rr5683gf5992bsj7ahk6ukalqoi1.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAM5Zpf47DhREkgLbOHPtlN1nWPzQ8204k"
+          "current_key": "AIzaSyBjAn_NMyOniH21vukd2l0HkcwrT-sQ8OY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "821384691750-o3d10ksu834ktt3isonpl1m184r8ba0b.apps.googleusercontent.com",
+              "client_id": "1054356855372-ami3rr5683gf5992bsj7ahk6ukalqoi1.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

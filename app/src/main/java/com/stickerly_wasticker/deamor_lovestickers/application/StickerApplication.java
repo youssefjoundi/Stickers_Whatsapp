@@ -19,7 +19,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import com.onesignal.OneSignal;
 
 public class StickerApplication extends Application {
-    private static final String ONESIGNAL_APP_ID = "cb58ecd2-9d63-4851-9fc6-7f2d3f2d6010";
+    private static final String ONESIGNAL_APP_ID = "2a1ed7ee-504a-4bfd-bc41-a1262cfc1e63";
     private FirebaseAnalytics mFirebaseAnalytics;
     @Override
     public void onCreate() {

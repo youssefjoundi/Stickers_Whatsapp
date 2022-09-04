@@ -4,7 +4,7 @@ public class Constants {
 
     public static int counter = 0;
 
-    public static String jsonUrl = "https://drive.google.com/uc?id=1KEDlmFp-h67UXfgtAyepfSoenAosrNmw";
+    public static String jsonUrl = "https://drive.google.com/uc?id=17m9tQ2QDGXKTQzlp726mAQNlFNSVjSW4";
 
     public static String ad_status;
 
