@@ -19,7 +19,7 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
--keep public class com.stickerly_wasticker.deamor_lovestickers.activities.StickerPackDetailsActivity { *; }
+-keep public class com.demo.jozefx.activities.StickerPackDetailsActivity { *; }
 -keepattributes LineNumberTable,SourceFile
 
 -keepclassmembers class com.ironsource.sdk.controller.IronSourceWebView$JSInterface {

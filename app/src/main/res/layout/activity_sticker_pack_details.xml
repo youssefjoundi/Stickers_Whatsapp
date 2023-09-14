@@ -368,7 +368,7 @@
                         android:layout_weight="1">
 
 
-                        <com.stickerly_wasticker.deamor_lovestickers.recyclerview.BottomFadingRecyclerView
+                        <com.demo.jozefx.recyclerview.BottomFadingRecyclerView
                             android:id="@+id/sticker_list"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
