@@ -94,7 +94,7 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
 
         setSupportActionBar(toolbar1);
         AdsManager.getInstance().showBannerIronSource(this);
-        AdsManager.getInstance().loadIronSourceInterstitial1(this);
+        AdsManager.getInstance().loadInterstitial1(this);
 
         stickerPack = getIntent().getParcelableExtra(EXTRA_STICKER_PACK_DATA);
         TextView packNameTextView = findViewById(R.id.pack_name);

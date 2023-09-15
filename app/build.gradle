@@ -10,12 +10,13 @@ android {
         noCompress "webp"
 
     }
-    compileSdkVersion 32
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.demo.jozefx"
         minSdkVersion 21
-        targetSdkVersion 32
+        //noinspection EditedTargetSdkVersion
+        targetSdkVersion 33
         versionCode 11
         versionName "v6.2"
         multiDexEnabled true

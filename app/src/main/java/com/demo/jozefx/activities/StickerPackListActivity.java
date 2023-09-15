@@ -66,7 +66,7 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
         fa = this;
         AdsManager.getInstance().init(this);
         AdsManager.getInstance().showBannerIronSource(this);
-        AdsManager.getInstance().loadIronSourceInterstitial(this);
+        AdsManager.getInstance().loadInterstitial(this);
 /////////////oncreate///////////////
         drawer = findViewById(R.id.draw);
         Toolbar toolbar;
@@ -121,7 +121,7 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
         whiteListCheckAsyncTask = new WhiteListCheckAsyncTask(this);
         whiteListCheckAsyncTask.execute(stickerPackList.toArray(new StickerPack[0]));
         if (Constants.counter >= Constants.adsInterval){
-            AdsManager.getInstance().loadIronSourceInterstitial(this);
+            AdsManager.getInstance().loadInterstitial(this);
             Constants.counter = 0;
         }
         AdsManager.getInstance().init(this);

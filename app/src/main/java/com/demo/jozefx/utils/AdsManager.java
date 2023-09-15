@@ -43,7 +43,7 @@ public class AdsManager {
 
 
 
-    public void loadIronSourceInterstitial(final Activity activity) {
+    public void loadInterstitial(final Activity activity) {
         interstitialAd = new InterstitialAd.Builder(activity)
                 .setAdStatus(Constants.ad_status)
                 .setAdNetwork(Constants.ad_network)
@@ -60,7 +60,7 @@ public class AdsManager {
     }
 
 
-    public void loadIronSourceInterstitial1(final Activity activity) {
+    public void loadInterstitial1(final Activity activity) {
         interstitialAd1 = new InterstitialAd.Builder(activity)
                 .setAdStatus(Constants.ad_status)
                 .setAdNetwork(Constants.ad_network)
