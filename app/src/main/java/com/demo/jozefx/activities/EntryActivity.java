@@ -19,8 +19,10 @@ import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -35,7 +37,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.solodroid.ads.sdk.format.NativeAd;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,16 +54,24 @@ public class EntryActivity extends BaseActivity {
 
     private View progressBar;
     private LoadListAsyncTask loadListAsyncTask;
+    LinearLayout nativeAdViewContainer;
+
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
+
         saka = (RelativeLayout) findViewById(R.id.content);
         btn = (Button) findViewById(R.id.btnDownload);
 
+        nativeAdViewContainer = findViewById(R.id.native_ad);
+
+
         new AdsManager();
+        AdsManager.getInstance().setNativeAdStyle(nativeAdViewContainer, this);
+
         overridePendingTransition(0, 0);
 
 
@@ -112,12 +121,6 @@ public class EntryActivity extends BaseActivity {
                     Constants.adMobInterstitialId = jsonAdMob.getString("interstitial");
                     Constants.adMobNativeId = jsonAdMob.getString("native");
                     //----------------------- AdMob -----------------------//
-                    //----------------------- AdMob -----------------------//
-                    JSONObject jsonGamanager = jsonAds.getJSONObject("GAM");
-                    Constants.gAdMangerBannerId = jsonGamanager.getString("banner");
-                    Constants.gAdMangerInterstitialId = jsonGamanager.getString("interstitial");
-                    Constants.gAdMangerNativeId = jsonGamanager.getString("native");
-                    //----------------------- AdMob -----------------------//
 
                     //----------------------- FAN -----------------------//
                     JSONObject jsonFan = jsonAds.getJSONObject("FAN");
@@ -126,10 +129,6 @@ public class EntryActivity extends BaseActivity {
                     Constants.fanNativeId = jsonFan.getString("native");
                     //----------------------- FAN -----------------------//
 
-                    //----------------------- ironSource -----------------------//
-                    JSONObject jsonIron = jsonAds.getJSONObject("ironSource");
-                    Constants.ironAppKey = jsonIron.getString("app_key");
-                    //----------------------- ironSource -----------------------//
 
                     //----------------------- MAX -----------------------//
                     JSONObject jsonMax = jsonAds.getJSONObject("MAX");
@@ -140,6 +139,7 @@ public class EntryActivity extends BaseActivity {
 
 
                     connexion = true;
+                    AdsManager.getInstance().init(EntryActivity.this);
                     loadListAsync();
 
                 } catch (JSONException e) {
@@ -214,22 +214,10 @@ public class EntryActivity extends BaseActivity {
             }
         }
 
-        NativeAd.Builder nativeAd;
         private void refreshAd() {
             if (connexion)
             {
-                nativeAd = new com.solodroid.ads.sdk.format.NativeAd.Builder(EntryActivity.this)
-                        .setAdStatus(Constants.ad_status)
-                        .setAdNetwork(Constants.ad_network)
-                        .setBackupAdNetwork(Constants.back_up)
-                        .setAdMobNativeId(Constants.adMobNativeId)
-                        .setAdManagerNativeId(Constants.gAdMangerNativeId)
-                        .setFanNativeId(Constants.fanNativeId)
-                        .setAppLovinNativeId(Constants.maxNativeId)
-                        .setNativeAdStyle(Constants.nativeStyle)
-                        .setDarkTheme(false)
-                        .setNativeEvent(()-> showButton())
-                        .build();
+                AdsManager.getInstance().loadNative(EntryActivity.this, ()->showButton());
             }
 
         }

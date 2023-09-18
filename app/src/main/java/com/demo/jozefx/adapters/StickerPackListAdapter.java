@@ -46,7 +46,7 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
     private int minMarginBetweenImages;
     private static final int ITEM_VIEW = 0;
     private static final int AD_VIEW = 1;
-    private int counter = 1;
+    private final int counter = 1;
     private Context context;
 
 
@@ -66,8 +66,25 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
             View view = layoutInflater.inflate(R.layout.item_pack, parent, false);
             return new StickerListViewHolder(view);
         } else if (viewType == AD_VIEW) {
-            View view = layoutInflater.inflate(R.layout.layout_native_max, parent, false);
-            return new NativeAdViewHolder(view);
+            View v;
+            switch (Constants.nativeStyle) {
+                case "news":
+                    v = LayoutInflater.from(parent.getContext()).inflate(com.solodroid.ads.sdk.R.layout.view_native_ad_news, parent, false);
+                    break;
+                case "radio":
+                    v = LayoutInflater.from(parent.getContext()).inflate(com.solodroid.ads.sdk.R.layout.view_native_ad_radio, parent, false);
+                    break;
+                case "video_small":
+                    v = LayoutInflater.from(parent.getContext()).inflate(com.solodroid.ads.sdk.R.layout.view_native_ad_video_small, parent, false);
+                    break;
+                case "video_large":
+                    v = LayoutInflater.from(parent.getContext()).inflate(com.solodroid.ads.sdk.R.layout.view_native_ad_video_large, parent, false);
+                    break;
+                default:
+                    v = LayoutInflater.from(parent.getContext()).inflate(com.solodroid.ads.sdk.R.layout.view_native_ad_medium, parent, false);
+                    break;
+            }
+            return new NativeAdViewHolder(v);
         } else {
             return null;
         }
@@ -87,12 +104,18 @@ public class StickerPackListAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                     Constants.ad_network,
                     Constants.back_up,
                     Constants.adMobNativeId,
-                    Constants.gAdMangerNativeId,
+                    Constants.adMobNativeId,
                     Constants.fanNativeId,
                     Constants.maxNativeId,
+                    Constants.maxBannerId,
                     false,
                     true,
-                    "default");
+                    "default",
+                    R.color.colorNativeBackgroundLight,
+                    R.color.colorNativeBackgroundDark
+                    );
+
+
         }
 
     }

@@ -20,4 +20,8 @@
     <color name="color_042834">#042834</color>
     <color name="color_black_30">#4D000000</color>
     <color name="text_color_2">#FF7325</color>
+
+    <color name="colorNativeBackgroundLight">#EAEAEA</color>
+    <color name="colorNativeBackgroundDark">#424242</color>
+
 </resources>

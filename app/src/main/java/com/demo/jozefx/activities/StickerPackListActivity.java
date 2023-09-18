@@ -15,6 +15,8 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
@@ -57,15 +59,24 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
     private WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     private ArrayList<StickerPack> stickerPackList;
 
+    LinearLayout bannerAdView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_sticker_pack_list);
 
+
+        bannerAdView = findViewById(R.id.banner_ad_view);
+        bannerAdView.addView(View.inflate(this, R.layout.view_banner_ad, null));
+
+
+
+
         fa = this;
         AdsManager.getInstance().init(this);
-        AdsManager.getInstance().showBannerIronSource(this);
+        AdsManager.getInstance().showBanner(this);
         AdsManager.getInstance().loadInterstitial(this);
 /////////////oncreate///////////////
         drawer = findViewById(R.id.draw);
@@ -125,7 +136,7 @@ public class StickerPackListActivity extends AddStickerPackActivity implements N
             Constants.counter = 0;
         }
         AdsManager.getInstance().init(this);
-        AdsManager.getInstance().showBannerIronSource(this);
+        AdsManager.getInstance().showBanner(this);
     }
 
     @Override

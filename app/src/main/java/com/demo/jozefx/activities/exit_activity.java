@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.demo.jozefx.R;
 import com.demo.jozefx.utils.AdsManager;
-import com.demo.jozefx.utils.Constants;
 import com.solodroid.ads.sdk.format.NativeAd;
 
 public class exit_activity extends AppCompatActivity {
@@ -19,6 +18,9 @@ public class exit_activity extends AppCompatActivity {
     private TextView text2;
     NativeAd.Builder nativeAd;
     private LinearLayout yes;
+
+    LinearLayout nativeAdViewContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,23 +41,16 @@ public class exit_activity extends AppCompatActivity {
         no.setOnClickListener((View v) -> {
             this.onBackPressed();
         });
-        AdsManager.getInstance().init(this);
-        loadnative();
-    }
+        nativeAdViewContainer = findViewById(R.id.native_ad);
 
-    public void loadnative(){
-        nativeAd = new NativeAd.Builder(this)
-                .setAdStatus(Constants.ad_status)
-                .setAdNetwork(Constants.ad_network)
-                .setBackupAdNetwork(Constants.back_up)
-                .setAdMobNativeId(Constants.adMobNativeId)
-                .setAdManagerNativeId(Constants.gAdMangerNativeId)
-                .setFanNativeId(Constants.fanNativeId)
-                .setAppLovinNativeId(Constants.maxNativeId)
-                .setNativeAdStyle(Constants.nativeStyle)
-                .setDarkTheme(false)
-                .setNativeEvent(()-> show())
-                .build();
+
+        new AdsManager();
+        AdsManager.getInstance().setNativeAdStyle(nativeAdViewContainer, this);
+
+
+
+        AdsManager.getInstance().init(this);
+        AdsManager.getInstance().loadNative(this, ()-> show());
     }
 
     public void show() {

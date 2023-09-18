@@ -75,26 +75,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <com.solodroid.ads.sdk.ui.MediumNativeAdView
+                <LinearLayout
+                    android:id="@+id/native_ad"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp" />
+                    android:orientation="vertical" />
 
-<!--                <com.facebook.ads.NativeAdLayout-->
-<!--                    android:id="@+id/fan_native"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="vertical" />-->
-
-<!--                <FrameLayout-->
-<!--                    android:id="@+id/native_ad_layout"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_centerVertical="true" />-->
-<!--                <FrameLayout-->
-<!--                    android:id="@+id/adMob_native"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content" />-->
 
             </LinearLayout>
 

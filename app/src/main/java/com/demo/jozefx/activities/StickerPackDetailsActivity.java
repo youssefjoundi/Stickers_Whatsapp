@@ -25,6 +25,7 @@ import android.view.Window;
 import android.view.inputmethod.InputMethodInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,6 +75,10 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
     private WhiteListCheckAsyncTask whiteListCheckAsyncTask;
 //     View addToKeyboardButton;
     private final String tag = "NativeAdActivity".getClass().getSimpleName();
+
+
+    LinearLayout bannerAdView;
+
     Context c;
     Window window;
 
@@ -90,10 +95,14 @@ public class StickerPackDetailsActivity extends AddStickerPackActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.back_ic);
 
+        bannerAdView = findViewById(R.id.banner_ad_view);
+        bannerAdView.addView(View.inflate(this, R.layout.view_banner_ad, null));
+
+
         Toolbar toolbar1 = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar1);
-        AdsManager.getInstance().showBannerIronSource(this);
+        AdsManager.getInstance().showBanner(this);
         AdsManager.getInstance().loadInterstitial1(this);
 
         stickerPack = getIntent().getParcelableExtra(EXTRA_STICKER_PACK_DATA);
