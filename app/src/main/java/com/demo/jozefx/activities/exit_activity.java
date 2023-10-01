@@ -46,9 +46,6 @@ public class exit_activity extends AppCompatActivity {
 
         new AdsManager();
         AdsManager.getInstance().setNativeAdStyle(nativeAdViewContainer, this);
-
-
-
         AdsManager.getInstance().init(this);
         AdsManager.getInstance().loadNative(this, ()-> show());
     }

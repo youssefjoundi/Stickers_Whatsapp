@@ -208,18 +208,14 @@ public class EntryActivity extends BaseActivity {
                     btn.setOnClickListener((View v) ->
                             entryActivity.showStickerPack(stringListPair.second)
                     );
-
-
                 }
             }
         }
 
         private void refreshAd() {
-            if (connexion)
-            {
+            if (connexion) {
                 AdsManager.getInstance().loadNative(EntryActivity.this, ()->showButton());
             }
-
         }
     }
 
