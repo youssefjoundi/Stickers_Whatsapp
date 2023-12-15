@@ -1,18 +1,27 @@
 package com.demo.jozefx.utils;
 
+
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
 
 import com.demo.jozefx.BuildConfig;
 import com.demo.jozefx.R;
+import com.google.android.ump.ConsentDebugSettings;
+import com.google.android.ump.ConsentForm;
+import com.google.android.ump.ConsentInformation;
+import com.google.android.ump.ConsentRequestParameters;
+import com.google.android.ump.UserMessagingPlatform;
 import com.solodroid.ads.sdk.format.AdNetwork;
 import com.solodroid.ads.sdk.format.BannerAd;
 import com.solodroid.ads.sdk.format.InterstitialAd;
 import com.solodroid.ads.sdk.format.NativeAd;
 import com.solodroid.ads.sdk.util.OnInterstitialAdDismissedListener;
 import com.solodroid.ads.sdk.util.OnNativeLoaded;
+
+import java.util.concurrent.atomic.AtomicBoolean;
 
 
 public class AdsManager {
@@ -30,9 +39,76 @@ public class AdsManager {
         }
         return instance;
     }
+    private ConsentInformation consentInformation;
+    private final AtomicBoolean isMobileAdsInitializeCalled = new AtomicBoolean(false);
 
     public void init(Activity activity) {
+        requestConstentForm(activity);
+    }
 
+
+
+    public void requestConstentForm(Activity activity) {
+
+//        ConsentDebugSettings.Builder().addTestDeviceHashedId("75B4865EF1E789733D7A46D7EB6D805B")
+        ConsentDebugSettings debugSettings = new ConsentDebugSettings.Builder(activity)
+                .setDebugGeography(ConsentDebugSettings.DebugGeography.DEBUG_GEOGRAPHY_EEA)
+                .addTestDeviceHashedId("75B4865EF1E789733D7A46D7EB6D805B")
+                .build();
+
+
+        // Set tag for under age of consent. false means users are not under age
+        // of consent.
+        ConsentRequestParameters params = new ConsentRequestParameters
+                .Builder()
+                .setConsentDebugSettings(debugSettings)
+                .setTagForUnderAgeOfConsent(false)
+                .build();
+
+        consentInformation = UserMessagingPlatform.getConsentInformation(activity);
+        consentInformation.requestConsentInfoUpdate(
+                activity,
+                params,
+                (ConsentInformation.OnConsentInfoUpdateSuccessListener) () -> {
+                    UserMessagingPlatform.loadAndShowConsentFormIfRequired(
+                            activity,
+                            (ConsentForm.OnConsentFormDismissedListener) loadAndShowError -> {
+                                if (loadAndShowError != null) {
+                                    // Consent gathering failed.
+                                    Log.w("Jozef Here : ", String.format("%s: %s",
+                                            loadAndShowError.getErrorCode(),
+                                            loadAndShowError.getMessage()));
+                                }
+
+                                // Consent has been gathered.
+                                if (consentInformation.canRequestAds()) {
+                                    initializeMobileAdsSdk(activity);
+                                }
+                            }
+                    );
+                },
+                (ConsentInformation.OnConsentInfoUpdateFailureListener) requestConsentError -> {
+                    // Consent gathering failed.
+                    Log.w("Jozef Here : ", String.format("%s: %s",
+                            requestConsentError.getErrorCode(),
+                            requestConsentError.getMessage()));
+                });
+
+        // Check if you can initialize the Google Mobile Ads SDK in parallel
+        // while checking for new consent information. Consent obtained in
+        // the previous session can be used to request ads.
+        if (consentInformation.canRequestAds()) {
+            initializeMobileAdsSdk(activity);
+        }
+    }
+
+
+    private void initializeMobileAdsSdk(Activity activity) {
+        if (isMobileAdsInitializeCalled.getAndSet(true)) {
+            return;
+        }
+
+        // Initialize the Google Mobile Ads SDK.
         adNetwork = new AdNetwork.Initialize(activity)
                 .setAdStatus(Constants.ad_status)
                 .setAdNetwork(Constants.ad_network)
@@ -41,7 +117,11 @@ public class AdsManager {
                 .setAppLovinSdkKey(activity.getResources().getString(R.string.applovin_sdk_key))
                 .setDebug(BuildConfig.DEBUG)
                 .build();
+
+        // TODO: Request an ad.
+        // InterstitialAd.load(...);
     }
+
 
 
 
