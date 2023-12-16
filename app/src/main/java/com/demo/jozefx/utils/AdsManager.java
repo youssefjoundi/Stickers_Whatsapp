@@ -43,7 +43,10 @@ public class AdsManager {
     private final AtomicBoolean isMobileAdsInitializeCalled = new AtomicBoolean(false);
 
     public void init(Activity activity) {
-        requestConstentForm(activity);
+        if (Constants.ad_network.equals("admob"))
+            requestConstentForm(activity);
+        else
+            initAdsNetwork(activity);
     }
 
 
@@ -109,6 +112,13 @@ public class AdsManager {
         }
 
         // Initialize the Google Mobile Ads SDK.
+        initAdsNetwork(activity);
+
+        // TODO: Request an ad.
+        // InterstitialAd.load(...);
+    }
+
+    private void initAdsNetwork(Activity activity) {
         adNetwork = new AdNetwork.Initialize(activity)
                 .setAdStatus(Constants.ad_status)
                 .setAdNetwork(Constants.ad_network)
@@ -117,9 +127,6 @@ public class AdsManager {
                 .setAppLovinSdkKey(activity.getResources().getString(R.string.applovin_sdk_key))
                 .setDebug(BuildConfig.DEBUG)
                 .build();
-
-        // TODO: Request an ad.
-        // InterstitialAd.load(...);
     }
 
 
